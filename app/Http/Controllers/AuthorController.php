@@ -26,10 +26,9 @@ class AuthorController extends Controller
 
     /**
      * Return author list
-     * @param Request $request
      * @return JsonResponse
      */
-    public function index(Request $request)
+    public function index()
     {
         $authors = Author::all();
 
@@ -96,7 +95,7 @@ class AuthorController extends Controller
 
         $author->save();
 
-        return $this->successResponse($author, Response::HTTP_CREATED);
+        return $this->successResponse($author);
     }
 
     /**
