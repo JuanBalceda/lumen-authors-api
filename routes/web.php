@@ -16,3 +16,10 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/authors', 'AuthorController@index');
+$router->post('/authors', 'AuthorController@store');
+$router->get('/authors/{idAuthor}', 'AuthorController@show');
+$router->put('/authors/{idAuthor}', 'AuthorController@update');
+$router->patch('/authors/{idAuthor}', 'AuthorController@update');
+$router->delete('/authors/{idAuthor}', 'AuthorController@destroy');
